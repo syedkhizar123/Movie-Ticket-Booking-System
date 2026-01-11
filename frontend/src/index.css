@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+
+body{
+  background-color: black;
+  color: white;
+}
+
+.no-scrollbar {
+  /* -ms-overflow-style: none;  */
+  scrollbar-width: none;  
+}
+
+Nav.active{
+  color: "red"
+}
+
+:root {
+  --primary-color: rgb(248, 69, 101);
+  --secondary-color: rgb(207, 43, 73);
+  /* --admin-color: rgb(174, 30, 56); */
+   
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+
+::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
