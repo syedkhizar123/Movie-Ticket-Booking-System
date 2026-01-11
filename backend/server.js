@@ -2,7 +2,7 @@ const express = require('express')
 const cors = require('cors')
 const dotenv = require('dotenv')
 const connectDB = require('./config/db')
-dotenv.config({quiet: true})
+dotenv.config({ quiet: true })
 const PORT = process.env.PORT || 3000
 const app = express()
 app.use(express.json())
@@ -12,25 +12,29 @@ const bookingRoutes = require('./Routes/BookingRoutes')
 const moviesRoutes = require('./Routes/MoviesRoutes')
 
 app.get('/image-proxy', async (req, res) => {
-  try {
-    const imageUrl = req.query.url; 
-    const response = await fetch(imageUrl);
-    const buffer = await response.arrayBuffer();
+    try {
+        const imageUrl = req.query.url;
+        const response = await fetch(imageUrl);
+        const buffer = await response.arrayBuffer();
 
-    res.set('Access-Control-Allow-Origin', '*');
-    res.set('Content-Type', 'image/jpeg');
-    res.send(Buffer.from(buffer));
-  } catch (err) {
-    res.status(500).send('Failed to fetch image');
-  }
+        res.set('Access-Control-Allow-Origin', '*');
+        res.set('Content-Type', 'image/jpeg');
+        res.send(Buffer.from(buffer));
+    } catch (err) {
+        res.status(500).send('Failed to fetch image');
+    }
 });
 
-app.use('/user' , userRoutes)
-app.use('/bookings' , bookingRoutes)
-app.use('/movies' , moviesRoutes)
+app.use('/user', userRoutes)
+app.use('/bookings', bookingRoutes)
+app.use('/movies', moviesRoutes)
+app.get('/', (req, res) => {
+    res.send('Backend is running!'); // simple response for root
+});
 
-connectDB() 
 
-app.listen(PORT , () => {
+connectDB()
+
+app.listen(PORT, () => {
     console.log(`The server is running on PORT ${PORT}`)
 })
