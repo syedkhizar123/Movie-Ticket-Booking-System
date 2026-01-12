@@ -127,7 +127,7 @@ export const MoviesProvider = ({ children }) => {
 
             const res = await fetch(url, options);
             const data = await res.json();
-            console.log(data.results)
+            // console.log(data.results)
             setUpcoming(data.results)
         } catch (error) {
             console.log(error.message)

@@ -21,11 +21,13 @@ export const AuthProvider = ({ children }) => {
                 console.log('Token valid', data);
                 return true;
             } else {
-                localStorage.removeItem('cinema_app_token'); // remove expired
+                console.log('False')
+                localStorage.removeItem('cinema_app_token'); 
                 return false;
             }
         } catch (err) {
-            localStorage.removeItem('cinema_app_token'); // remove expired/invalid
+            console.log("False")
+            localStorage.removeItem('cinema_app_token'); 
             return false;
         }
     }

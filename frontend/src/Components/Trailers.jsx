@@ -8,12 +8,10 @@ export const Trailers = () => {
 
     const [activeTrailer, setActiveTrailer] = useState(dummyTrailers[0])
     const [play, setPlay] = useState(false)
-    console.log(activeTrailer.videoUrl)
+    // console.log(activeTrailer.videoUrl)
     return (
         <>
-            {/* <p className='mt-10 w-[90%] sm:w-[80%] mx-auto font-semibold text-lg'>
-                Trailers
-            </p> */}
+            
 
             <div className='w-[90%] lg:w-[80%] h-[700px] mx-auto max-w-[1000px] flex flex-col gap-3 mt-20'>
                 {!play ? (<>

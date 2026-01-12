@@ -29,7 +29,7 @@ app.use('/user', userRoutes)
 app.use('/bookings', bookingRoutes)
 app.use('/movies', moviesRoutes)
 app.get('/', (req, res) => {
-    res.send('Backend is running!'); // simple response for root
+    res.send('Backend is running!'); 
 });
 
 
